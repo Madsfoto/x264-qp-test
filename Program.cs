@@ -45,7 +45,7 @@ namespace x264_qp_test
             {
                 for (int presetInt = 0; presetInt < presetArr.Length; presetInt++)
                 {
-                    for (int QPInt = 0; QPInt < 75; QPInt++) // qp is defined from 0 to 51 i 8 bit, 0-69 in 10 bit. I only expand that range for reproduceability reasons
+                    for (int QPInt = 0; QPInt < 75; QPInt++) // qp is defined from 0 to 51 i 8 bit, 0-69 in 10 bit. I only expand that range for reproducibility reasons
                     {
                         for (int pix_fmtInt = 0; pix_fmtInt < pix_fmtArr.Length; pix_fmtInt++)
                         {
