@@ -28,8 +28,8 @@ namespace x264_qp_test
 
             string inputFilenameNoExt = inputFilename.Substring(0, (inputFilename.Length - inputFilename.LastIndexOf(".") + 1));
 
-            //string ffmpeg = "ffmpeg"; // Normal usage. I have renamed the executeable to keep track of the specific version
-            string ffmpeg = "ffmpeg-repro";
+            string ffmpeg = "ffmpeg"; // Normal usage. I have renamed the executeable to keep track of the specific version
+            //string ffmpeg = "ffmpeg-repro";
             string ff = ffmpeg + " -i " + inputFilename + " -c:v libx264 ";
             string profileStr = "-profile:v ";
             string presetStr = "-preset ";
@@ -40,12 +40,14 @@ namespace x264_qp_test
 
             List<string> writeStrList = new List<string>();
             String outputFilename = "";
+            
+            int QP_max = 75;
 
             for (int profileInt = 0; profileInt < profileArr.Length; profileInt++)
             {
                 for (int presetInt = 0; presetInt < presetArr.Length; presetInt++)
                 {
-                    for (int QPInt = 0; QPInt < 75; QPInt++) // qp is defined from 0 to 51 i 8 bit, 0-69 in 10 bit. I only expand that range for reproducibility reasons
+                    for (int QPInt = 0; QPInt < QP_max; QPInt++) // qp is defined from 0 to 51 i 8 bit, 0-69 in 10 bit. I only expand that range for reproducibility reasons
                     {
                         for (int pix_fmtInt = 0; pix_fmtInt < pix_fmtArr.Length; pix_fmtInt++)
                         {
