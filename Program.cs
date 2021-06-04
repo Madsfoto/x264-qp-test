@@ -79,7 +79,7 @@ namespace x264_qp_test
 
                                 string FFCmd = ff + profileStr + profileArr[profileInt] + " " + presetStr + presetArr[presetInt] + " " + QPStr + QPInt + " " + pix_fmtStr + pix_fmtArr[pix_fmtInt];
 
-                                outputFilename = inputFilenameNoExt + "_" + profileInt + profileArr[profileInt] + "_" + presetInt + presetArr[presetInt] + "_QP_" + QPIntStr + "_" + pix_fmtArr[pix_fmtInt] + "_" + encodeIntStr + ".mov";
+                                outputFilename = inputFilenameNoExt + "_" + profileInt + profileArr[profileInt] + "_" + presetInt + presetArr[presetInt] + "_QP_" + QPIntStr + "_" + pix_fmtInt + pix_fmtArr[pix_fmtInt] + "_" + encodeIntStr + ".mov";
 
                                 writeStrList.Add(FFCmd + " " + outputFilename);
                             }
