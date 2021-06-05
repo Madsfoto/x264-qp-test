@@ -41,13 +41,14 @@ namespace x264_qp_test
             List<string> writeStrList = new List<string>();
             String outputFilename = "";
             
-            int QP_max = 75;
+            int QP_max = 85;
 
             for (int profileInt = 0; profileInt < profileArr.Length; profileInt++)
             {
                 for (int presetInt = 0; presetInt < presetArr.Length; presetInt++)
                 {
-                    for (int QPInt = 0; QPInt < QP_max; QPInt++) // qp is defined from 0 to 51 i 8 bit, 0-69 in 10 bit. I only expand that range for reproducibility reasons
+                    for (int QPInt = 0; QPInt < QP_max; QPInt++) // qp is defined from 0 to 69 i 8 bit, 0-81 in 10 bit. I only expand that range for reproducibility reasons
+                        // 
                     {
                         for (int pix_fmtInt = 0; pix_fmtInt < pix_fmtArr.Length; pix_fmtInt++)
                         {
